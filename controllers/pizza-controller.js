@@ -6,6 +6,16 @@ const pizzaController = {
   // callback function for the GET /api/pizzas route. It uses the Mongoose .find() method
   getAllPizza(req, res) {
     Pizza.find({})
+      //populate comments field
+      .populate({
+        path: "comments",
+        //ignore __v field
+        select: "-__v",
+      })
+      //ignore __v field
+      .select("-__v")
+      //sort in descending order by id
+      .sort({ _id: -1 })
       .then((dbPizzaData) => res.json(dbPizzaData))
       .catch((err) => {
         console.log(err);
