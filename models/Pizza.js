@@ -1,5 +1,7 @@
 //import dependencies: Schema constructor and model function
 const { Schema, model } = require("mongoose");
+//import date format function
+const dateFormat = require("../utils/dateFormat");
 
 //define fields with specific data types to regulate data appearance
 const PizzaSchema = new Schema(
@@ -10,9 +12,11 @@ const PizzaSchema = new Schema(
     createdBy: {
       type: String,
     },
-    createAt: {
+    createdAt: {
       type: Date,
       default: Date.now,
+      //use getter to format date using the dateFormat() function
+      get: (createdAtVal) => dateFormat(createdAtVal),
     },
     size: {
       type: String,
@@ -32,6 +36,8 @@ const PizzaSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
+      //enable getters
+      getters: true,
     },
     id: false,
   }
