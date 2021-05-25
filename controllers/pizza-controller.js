@@ -27,8 +27,12 @@ const pizzaController = {
   //Instead of accessing the entire req, we've destructured params out of it, because that's the only data we need for this request to be fulfilled.
   getPizzaById({ params }, res) {
     Pizza.findOne({ _id: params.id })
+      .populate({
+        path: "comments",
+        select: "-__v",
+      })
+      .select("-__v")
       .then((dbPizzaData) => {
-        // If no pizza is found, send 404
         if (!dbPizzaData) {
           res.status(404).json({ message: "No pizza found with this id!" });
           return;
