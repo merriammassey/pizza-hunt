@@ -13,5 +13,5 @@ router.route("/:pizzaId").post(addComment);
 //updated to add reply, callback of route method has automatic req and res parameters
 router.route("/:pizzaId/:commentId").put(addReply).delete(removeComment);
 
-router.route("/:pizzaId/:commentId:replyId").delete(removeReply);
+router.route("/:pizzaId/:commentId:/replyId").delete(removeReply);
 module.exports = router;

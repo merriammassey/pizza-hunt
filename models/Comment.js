@@ -1,15 +1,15 @@
 const { Schema, model, Types } = require("mongoose");
-const { STRING } = require("sequelize/types");
+//const { STRING } = require("sequelize/types");
 const dateFormat = require("../utils/dateFormat");
 
 const ReplySchema = new Schema(
   {
     //create custom id to avoid confusion with parent comment id
     replyId: {
-      type: Schema.Types.ObjectId(),
+      type: Schema.Types.ObjectId,
     },
     replyBody: {
-      type: STRING,
+      type: String,
     },
     writtenBy: {
       type: String,

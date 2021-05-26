@@ -1,5 +1,6 @@
 //import dependencies: Schema constructor and model function
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
+
 //import date format function
 const dateFormat = require("../utils/dateFormat");
 
