@@ -1,5 +1,4 @@
 const { Schema, model, Types } = require("mongoose");
-//const { STRING } = require("sequelize/types");
 const dateFormat = require("../utils/dateFormat");
 
 const ReplySchema = new Schema(
