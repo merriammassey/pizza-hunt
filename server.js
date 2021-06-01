@@ -20,7 +20,7 @@ mongoose.set("debug", true);
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
 
 const connection =
-  "mongodb+srv://mmm97m:mebechjo!1@cluster0/pizza-hunt-db?retryWrites=true&w=majority";
+  "mongodb+srv://mmm97m:3ttKwSshJEHHacY@cluster0/pizza-hunt-db?retryWrites=true&w=majority";
 mongoose
   .connect(connection, {
     useNewUrlParser: true,
